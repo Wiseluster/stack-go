@@ -2,7 +2,6 @@ package main
 
 import (
     "fmt"
-    "os"
     "reflect"
     "wiselusterlab/container/stack"
 )
@@ -14,8 +13,7 @@ func main() {
     if t, e := s.Top(); e == nil {
         fmt.Println(s.Size(), t)
     } else {
-        fmt.Fprintln(os.Stderr, e)
-        os.Exit(1)
+        panic(e)
     }
 
     for !s.Empty() {
