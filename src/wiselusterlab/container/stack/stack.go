@@ -1,6 +1,9 @@
 package stack
 
-import "errors"
+import (
+    "errors"
+    "fmt"
+)
 
 type Stack struct  {
     data []interface {}
@@ -39,4 +42,8 @@ func (this *Stack) Pop() (interface {}, error) {
 
 func (this *Stack) Swap(that *Stack) {
     this.data, that.data = that.data, this.data
+}
+
+func (this *Stack) String() string {
+    return fmt.Sprintf("Stack%v", this.data)
 }
