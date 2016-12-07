@@ -3,7 +3,7 @@ package main
 import (
     "fmt"
     "reflect"
-    "stack"
+    "wiselusterlab/container/stack"
 )
 
 func main() {
