@@ -1,3 +1,3 @@
 #!/bin/sh
 
-GOPATH=${PWD} ${GO:="go"} run main.go
+GOPATH="${PWD}:${GOPATH}" ${GO:="go"} run main.go
