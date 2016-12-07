@@ -8,7 +8,7 @@ import (
 
 func main() {
     s := stack.New("Hello", 12, 3.14)
-    s.Push(3+4i)
+    s.Push(3 + 4i)
 
     if t, e := s.Top(); e == nil {
         fmt.Println(s.Size(), t)
