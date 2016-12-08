@@ -9,10 +9,10 @@ func main() {
     s := stack.New()
 
     s.Swap(stack.New("Hello", 12, 3.14))
-    s.Push(3 + 4i, true)
+    s.Push(3 + 4i, true, Foo{1, 2})
 
     if _, e := s.Top(); e == nil {
-        fmt.Printf("%v\t%v\n", s, s.Size())
+        fmt.Printf("%#v\t%v\n", s, s.Size())
     } else {
         panic(e)
     }
