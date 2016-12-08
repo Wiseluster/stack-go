@@ -1,4 +1,5 @@
 #!/bin/sh
 
-cp -fR ${PWD}/src ${GOPATH:="${HOME}/go"}
+mkdir -p ${GOPATH:="${HOME}/go"}/src
+cp -fR ${PWD}/src ${GOPATH}/
 ${GO:="go"} install wiselusterlab/container/stack
