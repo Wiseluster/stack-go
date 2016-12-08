@@ -45,5 +45,5 @@ func (this *Stack) Swap(that *Stack) {
 }
 
 func (this *Stack) String() string {
-    return "Stack" + fmt.Sprintf("%#+v", this.data)[len("[]interface {}"):];
+    return "Stack" + fmt.Sprintf("%#+v", this.data)[len("[]interface {}"):]
 }
