@@ -45,7 +45,7 @@ func (this *Stack) Swap(that *Stack) {
 }
 
 func (this *Stack) String() string {
-    return fmt.Sprintf("%v", this._d)
+    return fmt.Sprint(this._d)
 }
 
 func (this *Stack) GoString() string {
