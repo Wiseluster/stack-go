@@ -3,7 +3,7 @@ package stack
 import "fmt"
 
 type Stack struct  {
-    data []interface {}
+    _d []interface {}
 }
 
 func New(vals ...interface {}) *Stack {
@@ -15,7 +15,7 @@ func (this *Stack) Empty() bool {
 }
 
 func (this *Stack) Size() int {
-    return len(this.data)
+    return len(this._d)
 }
 
 func (this *Stack) Top() (interface {}, error) {
@@ -23,31 +23,31 @@ func (this *Stack) Top() (interface {}, error) {
         return nil, fmt.Errorf("trying to get the top of an empty stack <%p>", this)
     }
 
-    return this.data[this.Size() - 1], nil
+    return this._d[this.Size() - 1], nil
 }
 
 func (this *Stack) Push(vals ...interface {}) {
-    this.data = append(this.data, vals...)
+    this._d = append(this._d, vals...)
 }
 
 func (this *Stack) Pop() (interface {}, error) {
     top, err := this.Top()
 
     if err == nil {
-        this.data = this.data[:this.Size() - 1]
+        this._d = this._d[:this.Size() - 1]
     }
 
     return top, err
 }
 
 func (this *Stack) Swap(that *Stack) {
-    this.data, that.data = that.data, this.data
+    this._d, that._d = that._d, this._d
 }
 
 func (this *Stack) String() string {
-    return fmt.Sprintf("%v", this.data)
+    return fmt.Sprintf("%v", this._d)
 }
 
 func (this *Stack) GoString() string {
-    return "Stack" + fmt.Sprintf("%#v", this.data)[len("[]interface {}"):]
+    return "Stack" + fmt.Sprintf("%#v", this._d)[len("[]interface {}"):]
 }

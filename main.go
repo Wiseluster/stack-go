@@ -2,18 +2,25 @@ package main
 
 import (
     "fmt"
+    "strconv"
     "wiselusterlab/container/stack"
 )
 
-type Foo struct {
-    Bar int64
+type char rune
+
+func (this char) String() string {
+    return string(this)
+}
+
+func (this char) GoString() string {
+    return strconv.QuoteRune(rune(this))
 }
 
 func main() {
     s := stack.New()
 
     s.Swap(stack.New("Hello", 12, 3.14))
-    s.Push(3 + 4i, true, Foo{9})
+    s.Push(3 + 4i, true, char('A'))
 
     fmt.Println(s)
 
