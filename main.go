@@ -5,11 +5,15 @@ import (
     "wiselusterlab/container/stack"
 )
 
+type Foo struct {
+    Bar int64
+}
+
 func main() {
     s := stack.New()
 
     s.Swap(stack.New("Hello", 12, 3.14))
-    s.Push(3 + 4i, true)
+    s.Push(3 + 4i, true, Foo{9})
 
     fmt.Println(s)
 
