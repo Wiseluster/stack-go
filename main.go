@@ -19,6 +19,6 @@ func main() {
 
     for !s.Empty() {
         v, _ := s.Pop()
-        fmt.Printf("%T\t%#v\n", v, v)
+        fmt.Printf("%T\t%#[1]v\n", v)
     }
 }

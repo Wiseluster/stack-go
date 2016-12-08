@@ -1,9 +1,6 @@
 package stack
 
-import (
-    "errors"
-    "fmt"
-)
+import "fmt"
 
 type Stack struct  {
     data []interface {}
@@ -23,8 +20,9 @@ func (this *Stack) Size() int {
 
 func (this *Stack) Top() (interface {}, error) {
     if this.Empty() {
-        return nil, errors.New("stack is empty")
+        return nil, fmt.Errorf("trying to get the top of an empty stack <%p>", this)
     }
+
     return this.data[this.Size() - 1], nil
 }
 
@@ -34,9 +32,11 @@ func (this *Stack) Push(vals ...interface {}) {
 
 func (this *Stack) Pop() (interface {}, error) {
     top, err := this.Top()
+
     if err == nil {
         this.data = this.data[:this.Size() - 1]
     }
+
     return top, err
 }
 
